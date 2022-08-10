@@ -1,0 +1,54 @@
+@import './fontsizes';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+$boder-color:red;
+$text-color:#000;
+$para-color:#323232;
+$bg-color:#e1dfdf;
+
+@mixin flexprops() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    @include flexprops()
+}
+.container{
+    width: 400px;
+    height: 250px;
+    border: 1px solid $boder-color;
+    padding: 10px+10px;
+    margin: auto;
+    @include flexprops();
+    h1{
+        color: $text-color;
+    }
+    p{
+        color: $para-color;
+    }
+    &:hover{
+        background-color: #9f9f99;
+    }
+}
+
+@mixin paddingprops($part1,$borer-color) {
+    padding: $part1;
+    border: 1px solid $borer-color;
+}
+
+.box{
+    width: 300px;
+    height: 200px;
+    @include paddingprops(15px,red)
+}
